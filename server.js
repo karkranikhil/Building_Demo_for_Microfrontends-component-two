@@ -11,10 +11,12 @@ server.get('/', (req, res) => {
   const htmlPath = path.resolve(__dirname, 'build', 'index.html');
 
   fs.readFile(htmlPath, 'utf8', (err, html) => {
-    const rootElem = '<div id="products-root">';
+    const rootElem = '<microfrontends-products-list>';
     const renderedApp = renderToString(React.createElement(App, null));
 
-    res.send(html.replace(rootElem, rootElem + renderedApp));
+    setTimeout(() => {
+      res.send(html.replace(rootElem, rootElem + renderedApp));
+    }, 5000);
   });
 });
 

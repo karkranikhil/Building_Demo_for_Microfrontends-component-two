@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('products-root'));
-registerServiceWorker();
+class ProductsList extends HTMLElement {
+  attachedCallback() {
+    ReactDOM.render(<App />, this.createShadowRoot());
+  }
+}
+document.registerElement('microfrontends-products-list', ProductsList);
