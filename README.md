@@ -3,7 +3,7 @@
 ### 1) Create react app
     npm install -g create-react-app
     create-react-app product-list
-    cd header/
+    cd product-list/
     npm start
     
 ### 2) To build transpiled and run the server

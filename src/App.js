@@ -1,7 +1,7 @@
 import React from 'react';
 
-const productItemView = (product) =>
-  <li style={{ padding: "30px", listStyle: "none", border: "1px solid #000", margin: "5px" }}>
+const productItemView = (product, index) =>
+  <li style={{ padding: "30px", listStyle: "none", border: "1px solid #000", margin: "5px" }} key={index} >
     <b>{product}</b> <br />
     $ {(Math.random() * 100).toFixed(2)} <br />
     <button>Buy</button>
